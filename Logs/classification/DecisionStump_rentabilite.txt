@@ -1,0 +1,44 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.DecisionStump 
+Relation:     movie_metadata_clustering
+Instances:    5043
+Attributes:   12
+              duration
+              gross
+              genres
+              actor_3_name
+              facenumber_in_poster
+              country
+              budget
+              title_year
+              movie_facebook_likes
+              ratio_rentabilite
+              imdb_score_disc
+              ratio_rentabilite_disc
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Decision Stump
+
+Classifications
+
+actor_3_name = amber armstrong : 7194.485533
+actor_3_name != amber armstrong : 4.407935784278351
+actor_3_name is missing : 3.6054281
+
+
+Time taken to build model: 0.01 seconds
+
+=== Cross-validation ===
+=== Summary ===
+
+Correlation coefficient                 -0.0449
+Mean absolute error                      7.545 
+Root mean squared error                129.6428
+Relative absolute error                 82.7276 %
+Root relative squared error             99.9981 %
+Total Number of Instances             3891     
+Ignored Class Unknown Instances               1152     
+

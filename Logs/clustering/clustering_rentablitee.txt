@@ -1,0 +1,87 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 4 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     movie_metadata-weka.filters.unsupervised.attribute.Remove-R29-54-weka.filters.unsupervised.attribute.Remove-R1-3,5-8,11-14,17-20,22,25-27
+Instances:    5043
+Attributes:   12
+              duration
+              gross
+              genres
+              actor_3_name
+              facenumber_in_poster
+              country
+              budget
+              title_year
+              movie_facebook_likes
+              ratio_rentabilite
+              imdb_score_disc
+Ignored:
+              ratio_rentabilite_disc
+Test mode:    Classes to clusters evaluation on training data
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 10
+Within cluster sum of squared errors: 12199.285641452556
+
+Initial starting points (random):
+
+Cluster 0: 87,6563357,adventure|comedy,'jeff garlin',4,usa,20000000,2008,847,0.328168,'\'Block1of4\''
+Cluster 1: 111,48430355,comedy|drama,'chelcie ross',2,usa,70000000,2011,0,0.691862,'\'Block1of4\''
+Cluster 2: 99,48468407.526809,thriller,'michael eisner',2,canada,1200000,2011,161,6.253747,'\'Block1of4\''
+Cluster 3: 119,48468407.526809,action|adventure|fantasy,'eddie peng',1,china,68005000,2016,426,6.253747,'\'Block2of4\''
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                                                                         Cluster#
+Attribute                                                                Full Data              0              1              2              3
+                                                                          (5043.0)       (1539.0)       (1619.0)        (376.0)       (1509.0)
+==============================================================================================================================================
+duration                                                                  107.2011        99.8743        115.403       104.4372       106.5624
+gross                                                                48468407.5268  39371694.6886  71616025.3888  25382250.8459  38663399.3435
+genres                                                                       drama         comedy   comedy|drama          drama          drama
+actor_3_name                                                          steve coogan   steve coogan   steve coogan   steve coogan ben mendelsohn
+facenumber_in_poster                                                        1.3712         1.5858         1.2596         1.0844         1.3434
+country                                                                        usa            usa            usa         canada            usa
+budget                                                               39752620.4364  30185826.0682  55196072.5281  34399797.3921   34274163.883
+title_year                                                               2002.4705      1999.1098      2002.7218       2009.174      2003.9581
+movie_facebook_likes                                                     7525.9645      3344.8441     14009.0815       6583.258      5069.3943
+ratio_rentabilite                                                           6.2537         4.8723         5.4236         3.5942         9.2159
+imdb_score_disc                                                        'Block3of4'    'Block1of4'    'Block3of4'    'Block1of4'    'Block2of4'
+
+
+
+
+Time taken to build model (full training data) : 0.16 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0      1539 ( 31%)
+1      1619 ( 32%)
+2       376 (  7%)
+3      1509 ( 30%)
+
+
+Class attribute: ratio_rentabilite_disc
+Classes to Clusters:
+
+   0   1   2   3  <-- assigned to cluster
+ 717 670 202 535 | 'Block4of4'
+ 310 280  42 341 | 'Block2of4'
+ 247 406  25 295 | 'Block3of4'
+ 265 263 107 338 | 'Block1of4'
+
+Cluster 0 <-- 'Block4of4'
+Cluster 1 <-- 'Block3of4'
+Cluster 2 <-- 'Block1of4'
+Cluster 3 <-- 'Block2of4'
+
+Incorrectly clustered instances :	3472.0	 68.8479 %
+

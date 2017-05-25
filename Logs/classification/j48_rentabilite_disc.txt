@@ -1,0 +1,69 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     movie_metadata_clustering
+Instances:    5043
+Attributes:   12
+              duration
+              gross
+              genres
+              actor_3_name
+              facenumber_in_poster
+              country
+              budget
+              title_year
+              movie_facebook_likes
+              ratio_rentabilite
+              imdb_score_disc
+              ratio_rentabilite_disc
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+ratio_rentabilite <= 1.070655
+|   ratio_rentabilite <= 0.450915: 'Block1of4' (973.0)
+|   ratio_rentabilite > 0.450915: 'Block2of4' (973.0)
+ratio_rentabilite > 1.070655
+|   ratio_rentabilite <= 2.22863: 'Block3of4' (973.0)
+|   ratio_rentabilite > 2.22863: 'Block4of4' (972.0)
+
+Number of Leaves  : 	4
+
+Size of the tree : 	7
+
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        3888               99.9229 %
+Incorrectly Classified Instances         3                0.0771 %
+Kappa statistic                          0.999 
+Mean absolute error                      0.0004
+Root mean squared error                  0.0196
+Relative absolute error                  0.1028 %
+Root relative squared error              4.5343 %
+Total Number of Instances             3891     
+Ignored Class Unknown Instances               1152     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    0.999      1.000    0.999      0.999    1.000     0.999     'Block4of4'
+                 0.999    0.000    0.999      0.999    0.999      0.999    0.999     0.998     'Block2of4'
+                 0.999    0.000    0.999      0.999    0.999      0.999    0.999     0.998     'Block3of4'
+                 0.999    0.000    1.000      0.999    0.999      0.999    0.999     0.999     'Block1of4'
+Weighted Avg.    0.999    0.000    0.999      0.999    0.999      0.999    0.999     0.999     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   <-- classified as
+ 972   0   0   0 |   a = 'Block4of4'
+   0 972   1   0 |   b = 'Block2of4'
+   1   0 972   0 |   c = 'Block3of4'
+   0   1   0 972 |   d = 'Block1of4'
+

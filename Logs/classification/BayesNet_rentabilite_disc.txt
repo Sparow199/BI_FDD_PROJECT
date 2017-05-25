@@ -1,0 +1,77 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 1 -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     movie_metadata_clustering
+Instances:    5043
+Attributes:   12
+              duration
+              gross
+              genres
+              actor_3_name
+              facenumber_in_poster
+              country
+              budget
+              title_year
+              movie_facebook_likes
+              ratio_rentabilite
+              imdb_score_disc
+              ratio_rentabilite_disc
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Bayes Network Classifier
+not using ADTree
+#attributes=12 #classindex=11
+Network structure (nodes followed by parents)
+duration(1): ratio_rentabilite_disc 
+gross(8): ratio_rentabilite_disc 
+genres(914): ratio_rentabilite_disc 
+actor_3_name(3521): ratio_rentabilite_disc 
+facenumber_in_poster(1): ratio_rentabilite_disc 
+country(65): ratio_rentabilite_disc 
+budget(6): ratio_rentabilite_disc 
+title_year(3): ratio_rentabilite_disc 
+movie_facebook_likes(4): ratio_rentabilite_disc 
+ratio_rentabilite(4): ratio_rentabilite_disc 
+imdb_score_disc(4): ratio_rentabilite_disc 
+ratio_rentabilite_disc(4): 
+LogScore Bayes: -87931.16700659298
+LogScore BDeu: -299107.65040883125
+LogScore MDL: -229440.41463328892
+LogScore ENTROPY: -154699.5648852991
+LogScore AIC: -172782.5648852991
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        3883               99.7944 %
+Incorrectly Classified Instances         8                0.2056 %
+Kappa statistic                          0.9973
+Mean absolute error                      0.0033
+Root mean squared error                  0.0322
+Relative absolute error                  0.889  %
+Root relative squared error              7.4396 %
+Total Number of Instances             3891     
+Ignored Class Unknown Instances               1152     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.999    0.000    1.000      0.999    0.999      0.999    1.000     0.999     'Block4of4'
+                 0.997    0.001    0.998      0.997    0.997      0.997    0.978     0.891     'Block2of4'
+                 0.998    0.001    0.997      0.998    0.997      0.997    1.000     0.999     'Block3of4'
+                 0.998    0.001    0.997      0.998    0.997      0.997    0.958     0.775     'Block1of4'
+Weighted Avg.    0.998    0.001    0.998      0.998    0.998      0.997    0.984     0.916     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   <-- classified as
+ 971   0   1   0 |   a = 'Block4of4'
+   0 970   1   2 |   b = 'Block2of4'
+   0   1 971   1 |   c = 'Block3of4'
+   0   1   1 971 |   d = 'Block1of4'
+

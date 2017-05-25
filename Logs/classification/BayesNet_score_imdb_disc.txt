@@ -1,0 +1,76 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 1 -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     movie_metadata_clustering
+Instances:    5043
+Attributes:   12
+              duration
+              gross
+              genres
+              actor_3_name
+              facenumber_in_poster
+              country
+              budget
+              title_year
+              movie_facebook_likes
+              ratio_rentabilite
+              imdb_score_disc
+              ratio_rentabilite_disc
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Bayes Network Classifier
+not using ADTree
+#attributes=12 #classindex=10
+Network structure (nodes followed by parents)
+duration(5): imdb_score_disc 
+gross(6): imdb_score_disc 
+genres(914): imdb_score_disc 
+actor_3_name(3521): imdb_score_disc 
+facenumber_in_poster(2): imdb_score_disc 
+country(65): imdb_score_disc 
+budget(3): imdb_score_disc 
+title_year(3): imdb_score_disc 
+movie_facebook_likes(4): imdb_score_disc 
+ratio_rentabilite(3): imdb_score_disc 
+imdb_score_disc(4): 
+ratio_rentabilite_disc(4): imdb_score_disc 
+LogScore Bayes: -122561.40865165979
+LogScore BDeu: -333698.26615794183
+LogScore MDL: -265385.35358792683
+LogScore ENTROPY: -188316.77841056426
+LogScore AIC: -206395.77841056426
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        2281               45.231  %
+Incorrectly Classified Instances      2762               54.769  %
+Kappa statistic                          0.2686
+Mean absolute error                      0.3025
+Root mean squared error                  0.4087
+Relative absolute error                 80.729  %
+Root relative squared error             94.4363 %
+Total Number of Instances             5043     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.556    0.138    0.563      0.556    0.559      0.420    0.820     0.603     'Block4of4'
+                 0.359    0.210    0.383      0.359    0.371      0.153    0.643     0.391     'Block3of4'
+                 0.307    0.185    0.336      0.307    0.321      0.126    0.641     0.337     'Block2of4'
+                 0.582    0.200    0.506      0.582    0.541      0.366    0.793     0.560     'Block1of4'
+Weighted Avg.    0.452    0.184    0.447      0.452    0.449      0.267    0.724     0.474     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   <-- classified as
+ 677 308 122 111 |   a = 'Block4of4'
+ 315 481 298 245 |   b = 'Block3of4'
+ 133 293 361 389 |   c = 'Block2of4'
+  78 175 295 762 |   d = 'Block1of4'
+

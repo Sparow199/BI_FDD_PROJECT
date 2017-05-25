@@ -1,0 +1,74 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.DecisionStump 
+Relation:     movie_metadata_clustering
+Instances:    5043
+Attributes:   12
+              duration
+              gross
+              genres
+              actor_3_name
+              facenumber_in_poster
+              country
+              budget
+              title_year
+              movie_facebook_likes
+              ratio_rentabilite
+              imdb_score_disc
+              ratio_rentabilite_disc
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Decision Stump
+
+Classifications
+
+duration <= 116.5 : 'Block1of4'
+duration > 116.5 : 'Block4of4'
+duration is missing : 'Block3of4'
+
+Class distributions
+
+duration <= 116.5
+'Block4of4'	'Block3of4'	'Block2of4'	'Block1of4'	
+0.17814533622559653	0.24620390455531455	0.2529826464208243	0.32266811279826463	
+duration > 116.5
+'Block4of4'	'Block3of4'	'Block2of4'	'Block1of4'	
+0.4164179104477612	0.31716417910447764	0.18059701492537314	0.08582089552238806	
+duration is missing
+'Block4of4'	'Block3of4'	'Block2of4'	'Block1of4'	
+0.2	0.4	0.06666666666666667	0.3333333333333333	
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1750               34.7016 %
+Incorrectly Classified Instances      3293               65.2984 %
+Kappa statistic                          0.1245
+Mean absolute error                      0.3629
+Root mean squared error                  0.4263
+Relative absolute error                 96.8679 %
+Root relative squared error             98.4901 %
+Total Number of Instances             5043     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.493    0.248    0.387      0.493    0.434      0.227    0.618     0.333     'Block4of4'
+                 0.003    0.002    0.333      0.003    0.006      0.008    0.541     0.291     'Block3of4'
+                 0.000    0.000    0.000      0.000    0.000      0.000    0.531     0.244     'Block2of4'
+                 0.875    0.626    0.329      0.875    0.478      0.236    0.627     0.324     'Block1of4'
+Weighted Avg.    0.347    0.223    0.268      0.347    0.231      0.118    0.580     0.299     
+
+=== Confusion Matrix ===
+
+    a    b    c    d   <-- classified as
+  600    2    0  616 |    a = 'Block4of4'
+  495    4    0  840 |    b = 'Block3of4'
+  295    1    0  880 |    c = 'Block2of4'
+  159    5    0 1146 |    d = 'Block1of4'
+
